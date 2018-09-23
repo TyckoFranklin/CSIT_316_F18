@@ -9,17 +9,16 @@ print("<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.
 print("<html lang='en'>");
 print("<head>");
 print("    <meta charset='UTF-8'>");
-print("    <title>Odd Numbers</title>");
+print("    <title>Gas Prices</title>");
 print("</head>");
 print("<body>");
-/** @var $IntVariable int */
-$IntVariable = 1;
-while($IntVariable <= 100){
-    /*  Only print for the odd numbers  */
-    if($IntVariable%2 === 1){
-        print("<div>".$IntVariable."</div>");
-    }
-    $IntVariable++;
+
+/** @var float $GasPrice */
+$GasPrice = 2.57;
+if ($GasPrice >= 2 && $GasPrice <=3){
+    echo "<p>Gas prices are between $2.00 and $3.00.</p>";
+} else {
+    echo "<p>Gas prices are not between $2.00 and $3.00</p>";
 }
 print("</body>");
 print("</html>");

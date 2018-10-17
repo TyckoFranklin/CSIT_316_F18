@@ -28,7 +28,7 @@ function readAndParseFile($fileName)
             "solutions" => '',
         ];
     }
-    $content = explode (DELIMITER, $content);
+    $content = explode(DELIMITER, $content);
     return [
         "filename" => $fileName,
         "name" => $content[0],
@@ -60,11 +60,12 @@ function listFiles()
  * Gets the list of .txt files then reads and parses each one and returns the resulting array.
  * @return string[][]
  */
-function getBugReports(){
+function getBugReports()
+{
     $list = listFiles();
     $result = [];
-    foreach ($list as $file){
-        array_push($result,readAndParseFile($file));
+    foreach ($list as $file) {
+        array_push($result, readAndParseFile($file));
     }
     return $result;
 }

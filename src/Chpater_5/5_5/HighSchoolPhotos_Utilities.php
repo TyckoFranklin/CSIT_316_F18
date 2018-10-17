@@ -22,6 +22,7 @@ function readAndParseFile($fileName)
             "filename" => $fileName,
             "name" => '',
             "description" => '',
+            "image" => '',
         ];
     }
     $content = explode(DELIMITER, $content);
@@ -29,6 +30,8 @@ function readAndParseFile($fileName)
         "filename" => $fileName,
         "name" => $content[0],
         "description" => $content[1],
+        "image" => str_replace("txt", "png", $fileName),
+
     ];
 }
 
@@ -72,8 +75,8 @@ function output($output, $fileName)
     $outputString = $output["name"] . DELIMITER .
         $output["description"];
 
-    $result = file_put_contents(STORAGE . $fileName . ".txt", $outputString)
-        & move_uploaded_file($_FILES["image"]["tmp_name"], $output . ".png");
+    $result = file_put_contents(STORAGE . $fileName . ".txt", $outputString) > 0 ? true : false;
+    $result &= move_uploaded_file($_FILES["image"]["tmp_name"], STORAGE . $fileName . ".png") > 0 ? true : false;
     if ($result) {
         print("<p>The image has been uploaded!</p>");
     } else {

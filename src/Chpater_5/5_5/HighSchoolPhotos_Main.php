@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: TyckoFranklin
- * Date: 10/15/2018
- * Time: 8:03 PM
+ * Date: 10/16/2018
+ * Time: 9:30 PM
  */
 
 include "HighSchoolPhotos_Utilities.php";
@@ -26,7 +26,7 @@ print("</div>");
 
 print("<hr>");
 print("<div>Current Content<br>");
-print("<table style='max-width: 80%'>");
+print("<table style='max-width: 50%'>");
 $bugReports = getBugReports();
 foreach ($bugReports as $bugReport) {
     print("<tr><td colspan='2'><img src='./storage/{$bugReport['image']}' ></td></tr><tr><td>{$bugReport['name']}</td><td>{$bugReport['description']}</td></tr>");

@@ -24,7 +24,7 @@ if (file_exists($CounterFile)) {
     $Hits = 1;
 }
 print("<h1>There have been $Hits hits to this page.");
-print("</h1>\n;");
+print("</h1>\n");
 
 if (file_put_contents($CounterFile, $Hits)) {
     print("<p>The counter file has been updated.");

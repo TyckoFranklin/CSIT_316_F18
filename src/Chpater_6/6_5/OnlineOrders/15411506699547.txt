@@ -1,0 +1,5 @@
+Motherboard: 6 @ $199.99 = $1199.94;
+CPU: 8 @ $499.99 = $3999.92;
+SSD 4 petabyte storage: 1 @ $199999.99 = $199999.99;
+RAM 32 terabytes: 2 @ $38299.99 = $76599.98;
+Order Total: $281799.83

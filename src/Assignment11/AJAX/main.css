@@ -1,0 +1,22 @@
+#input {
+    padding-top: 10px;
+    width: 100%;
+    min-height: 200px;
+    background: aquamarine;
+}
+
+table {
+    margin: 10px 2px;
+    width: 100%;
+}
+
+table, td, th {
+    border: 1px solid black;
+}
+
+#server {
+    width: 100%;
+    min-height: 200px;
+    background: darkturquoise;
+    margin-top: 100px;
+}

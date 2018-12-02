@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Simple Ajax</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="main"></div>
+        <script>   
+            var httpRequest;          
+            function getdata()
+            {
+                var data;
+                if(httpRequest.status===200&&httpRequest.readyState===4)
+                {                       
+                    data=JSON.parse(httpRequest.responseText);
+                    var headers=httpRequest.getAllResponseHeaders();
+                    document.getElementById("main").innerHTML+="data: "+data.fname+" "+data.lname+"<br><pre>"+headers+"<//pre>";
+                    //headers=header.split(":");
+                    
+                }              
+            };    
+        try
+        {
+            httpRequest=new XMLHttpRequest();
+            httpRequest.abort();//close any prev connection
+            httpRequest.open("get","data.php",true);
+            httpRequest.send(null);
+            httpRequest.onreadystatechange = getdata;         
+        }
+        catch(e)
+        {
+            document.getElementById("main").innerHTML="Please update your browser... "+e;
+        }   
+        </script>
+    </body>
+</html>
